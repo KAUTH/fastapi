@@ -3,6 +3,9 @@ from fastapi.requests import HTTPConnection
 from fastapi.testclient import TestClient
 from starlette.websockets import WebSocket
 
+import pytest
+pytestmark = pytest.mark.websocket
+
 app = FastAPI()
 app.state.value = 42
 

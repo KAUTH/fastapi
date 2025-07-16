@@ -2,6 +2,9 @@ from fastapi.testclient import TestClient
 
 from docs_src.websockets.tutorial003 import app, html
 
+import pytest
+pytestmark = pytest.mark.websocket
+
 client = TestClient(app)
 
 
@@ -11,7 +14,10 @@ def test_get():
 
 
 def test_websocket_handle_disconnection():
-    with client.websocket_connect("/ws/1234") as connection, client.websocket_connect(
+    client1 = TestClient(app)
+    client2 = TestClient(app)
+
+    with client1.websocket_connect("/ws/1234") as connection, client2.websocket_connect(
         "/ws/5678"
     ) as connection_two:
         connection.send_text("Hello from 1234")

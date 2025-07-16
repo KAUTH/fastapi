@@ -4,6 +4,8 @@ from fastapi.websockets import WebSocketDisconnect
 
 from docs_src.websockets.tutorial001 import app
 
+pytestmark = pytest.mark.websocket
+
 client = TestClient(app)
 
 

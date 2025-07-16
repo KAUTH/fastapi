@@ -7,6 +7,7 @@ from fastapi.websockets import WebSocketDisconnect
 
 from ...utils import needs_py39, needs_py310
 
+pytestmark = pytest.mark.websocket
 
 @pytest.fixture(
     name="app",

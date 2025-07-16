@@ -13,6 +13,8 @@ from fastapi import (
 from fastapi.middleware import Middleware
 from fastapi.testclient import TestClient
 
+pytestmark = pytest.mark.websocket
+
 router = APIRouter()
 prefix_router = APIRouter()
 native_prefix_route = APIRouter(prefix="/native")

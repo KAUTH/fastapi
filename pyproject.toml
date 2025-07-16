@@ -166,6 +166,9 @@ addopts = [
   "--strict-markers",
   "--ignore=docs_src",
 ]
+markers = [
+    "websocket: marks tests that use WebSocket features"
+]
 xfail_strict = true
 junit_family = "xunit2"
 filterwarnings = [
